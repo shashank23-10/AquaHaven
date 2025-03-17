@@ -125,7 +125,7 @@ function Woods() {
         <div className="logo">
           <Link to="/">AquaHaven</Link>
         </div>
-        <div className="hamburger">&#9776;</div>
+        <div className="hamburger" onClick={toggleMenu}>&#9776;</div>
         <ul className="nav-links">
           <li>
             <Link to="/fishes">Fishes</Link>
