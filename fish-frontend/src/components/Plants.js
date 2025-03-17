@@ -576,9 +576,6 @@ function Plants() {
             <Link to="/plants">Plants</Link>
           </li>
           <li>
-            <Link to="/decors">Artificial Decors</Link>
-          </li>
-          <li>
             <Link to="/woods">Woods</Link>
           </li>
         </ul>
