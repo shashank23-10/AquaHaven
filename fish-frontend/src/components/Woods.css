@@ -1,0 +1,405 @@
+/* ======================================================================
+AQUARIUM HUB - WOODS PAGE STYLES
+======================================================================
+This CSS file beautifies the Woods page with advanced gradients,
+animations, responsive design, and custom typography for an immersive
+user experience.
+====================================================================== */
+
+/* ----------------------------------------------------------------------
+1. BASE & RESET
+------------------------------------------------------------------------ */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html, body {
+width: 100%;
+height: 100%;
+font-family: 'Roboto', sans-serif;
+background: #f4f7f6;
+color: #424242;
+}
+
+/* ----------------------------------------------------------------------
+    2. CONTAINER & LAYOUT
+------------------------------------------------------------------------ */
+.woods-page {
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+
+/* ----------------------------------------------------------------------
+    3. NAVIGATION BAR
+------------------------------------------------------------------------ */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: linear-gradient(135deg, #004d40, #00695c);
+color: #ffffff;
+padding: 15px 30px;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1000;
+box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo a {
+font-size: 1.8em;
+font-weight: bold;
+color: #ffffff;
+text-decoration: none;
+letter-spacing: 1px;
+}
+
+.hamburger {
+display: none;
+font-size: 1.8em;
+cursor: pointer;
+}
+
+.nav-links {
+list-style: none;
+display: flex;
+gap: 20px;
+transition: all 0.3s ease;
+}
+
+.nav-links li {
+display: flex;
+align-items: center;
+}
+
+.nav-links a {
+color: #ffffff;
+text-decoration: none;
+font-size: 1em;
+padding: 5px 10px;
+border-radius: 4px;
+transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+background: rgba(255,255,255,0.2);
+color: #cfd8dc;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+.hamburger {
+    display: block;
+}
+.nav-links {
+    flex-direction: column;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: #004d40;
+    padding: 20px 0;
+    display: none;
+}
+.nav-links.open {
+    display: flex;
+}
+.nav-links li {
+    margin: 15px 0;
+    text-align: center;
+}
+}
+
+/* ----------------------------------------------------------------------
+    4. MAIN CONTENT AREA
+------------------------------------------------------------------------ */
+.woods-content {
+padding: 100px 20px 40px; /* Offset for fixed navbar */
+flex: 1;
+}
+
+.woods-content h1 {
+font-size: 2em;
+color: #004d40;
+margin-bottom: 30px;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+/* ----------------------------------------------------------------------
+    5. DROPDOWN SECTIONS & GROUPINGS
+------------------------------------------------------------------------ */
+.dropdown-section {
+margin: 20px auto;
+width: 90%;
+max-width: 1200px;
+background: #ffffff;
+border-radius: 12px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+overflow: hidden;
+margin-bottom: 30px;
+transition: transform 0.3s ease;
+}
+
+.dropdown-section:hover {
+transform: scale(1.01);
+}
+
+.dropdown-header {
+background-color: #00796b;
+color: #ffffff;
+padding: 15px 20px;
+font-size: 1.4em;
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: background 0.3s ease;
+}
+
+.dropdown-header:hover {
+background-color: #00695c;
+}
+
+.dropdown-icon {
+font-size: 1.6em;
+}
+
+.dropdown-content {
+padding: 20px;
+background-color: #e0f2f1;
+animation: fadeIn 0.5s;
+}
+
+/* ----------------------------------------------------------------------
+    6. WOOD LIST & GRID LAYOUT
+------------------------------------------------------------------------ */
+.wood-list {
+list-style: none;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 20px;
+padding: 0;
+}
+
+/* ----------------------------------------------------------------------
+    7. WOODCARD COMPONENT STYLING
+------------------------------------------------------------------------ */
+.wood-card {
+background: linear-gradient(135deg, #ffffff, #f1f8e9);
+border: 1px solid #ddd;
+border-radius: 12px;
+padding: 15px;
+display: flex;
+flex-direction: column;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wood-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.wood-image img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+border-radius: 10px;
+margin-bottom: 10px;
+transition: transform 0.3s ease;
+}
+
+.wood-image img:hover {
+transform: scale(1.02);
+}
+
+.wood-details h3 {
+font-size: 1.2em;
+margin-bottom: 10px;
+color: #00796b;
+text-transform: capitalize;
+}
+
+.wood-details ul {
+list-style: none;
+font-size: 0.9em;
+color: #424242;
+padding-left: 0;
+}
+
+.wood-details li {
+margin-bottom: 5px;
+position: relative;
+padding-left: 15px;
+}
+
+.wood-details li::before {
+content: "•";
+position: absolute;
+left: 0;
+color: #00796b;
+font-size: 1.2em;
+}
+
+.upload-section {
+margin-top: 10px;
+display: flex;
+align-items: center;
+}
+
+.upload-section label {
+font-size: 0.9em;
+margin-right: 5px;
+color: #00796b;
+}
+
+.upload-section input[type="file"] {
+border: none;
+outline: none;
+font-size: 0.9em;
+}
+
+/* ----------------------------------------------------------------------
+    8. FOOTER STYLES
+------------------------------------------------------------------------ */
+.footer {
+background: var(--primary-color, #004d40);
+color: #ffffff;
+text-align: center;
+padding: 20px 30px;
+font-size: 0.9em;
+margin-top: auto;
+border-top: 2px solid #c8e6c9;
+}
+
+.footer p {
+margin-bottom: 10px;
+}
+
+.social-media a {
+margin: 0 10px;
+color: #cfd8dc;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+color: #ffffff;
+}
+
+/* ----------------------------------------------------------------------
+    9. ANIMATIONS & EFFECTS
+------------------------------------------------------------------------ */
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+/* ----------------------------------------------------------------------
+    10. TYPOGRAPHY & UTILITIES
+------------------------------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+font-weight: 600;
+color: #004d40;
+margin-bottom: 10px;
+}
+
+p {
+margin-bottom: 15px;
+color: #424242;
+}
+
+a {
+text-decoration: none;
+}
+
+.text-center {
+text-align: center;
+}
+
+.uppercase {
+text-transform: uppercase;
+}
+
+.mt-20 {
+margin-top: 20px;
+}
+
+.mb-20 {
+margin-bottom: 20px;
+}
+
+/* ----------------------------------------------------------------------
+    11. CUSTOM BUTTON STYLES (if needed)
+------------------------------------------------------------------------ */
+.button {
+display: inline-block;
+padding: 10px 20px;
+background-color: #00796b;
+color: #ffffff;
+border-radius: 30px;
+font-size: 1em;
+transition: background 0.3s ease, transform 0.3s ease;
+cursor: pointer;
+}
+
+.button:hover {
+background-color: #00695c;
+transform: scale(1.02);
+}
+
+/* ----------------------------------------------------------------------
+    12. RESPONSIVE DESIGN
+------------------------------------------------------------------------ */
+@media (max-width: 768px) {
+.woods-content {
+    padding: 120px 20px 40px;
+}
+.dropdown-header {
+    font-size: 1.2em;
+    padding: 12px 15px;
+}
+.tank-size-header {
+    font-size: 1em;
+    padding: 8px 15px;
+}
+.wood-card {
+    padding: 10px;
+}
+}
+
+@media (max-width: 480px) {
+.woods-content {
+    padding: 140px 10px 20px;
+}
+.navbar .logo a {
+    font-size: 1.3em;
+}
+.nav-links a {
+    font-size: 0.9em;
+}
+.dropdown-header {
+    font-size: 1em;
+    padding: 10px 12px;
+}
+.tank-size-header {
+    font-size: 0.9em;
+    padding: 6px 10px;
+}
+.wood-details h3 {
+    font-size: 1em;
+}
+.wood-details ul {
+    font-size: 0.8em;
+}
+.upload-section label {
+    font-size: 0.8em;
+}
+}
+
+/* ======================================================================
+    END OF WOODS.CSS
+    ====================================================================== */

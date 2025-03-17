@@ -1,0 +1,531 @@
+/* ======================================================================
+   AQUARIUM HUB - FISHES PAGE STYLES
+   ======================================================================
+   Author: Your Name
+   Date: 2025-03-14
+   Description: Extensive CSS for the Fishes page of Aquarium Hub.
+                This file includes advanced styling, animations, gradients,
+                custom typography, grid layouts, transitions, and responsive
+                design. It is designed to produce an extremely beautified
+                interface across all devices.
+   ====================================================================== */
+
+/* ======================================================================
+   1. BASE & RESET STYLES
+   ====================================================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: #f4f7f6;
+    color: #424242;
+    line-height: 1.6;
+  }
+  
+  /* ======================================================================
+     2. GLOBAL VARIABLES & UTILITIES
+     ====================================================================== */
+  /* Colors */
+  :root {
+    --primary-color: #004d40;
+    --secondary-color: #00695c;
+    --accent-color: #00796b;
+    --light-bg: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-dark: #424242;
+    --text-light: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Transition Utility */
+  .transition {
+    transition: all 0.3s ease;
+  }
+  
+  /* ======================================================================
+     3. CONTAINER & LAYOUT STRUCTURE
+     ====================================================================== */
+  .fishes-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--light-bg);
+  }
+  
+  /* ======================================================================
+     4. NAVIGATION BAR
+     ====================================================================== */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--shadow-color);
+  }
+  
+  .logo a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--text-light);
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links li {
+    /* Using flex to center */
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #cfd8dc;
+  }
+  
+  /* Responsive Navigation */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+    .nav-links {
+      flex-direction: column;
+      position: fixed;
+      top: 65px;
+      left: 0;
+      width: 100%;
+      background: var(--primary-color);
+      padding: 20px 0;
+      display: none;
+    }
+    .nav-links.open {
+      display: flex;
+    }
+    .nav-links li {
+      margin: 15px 0;
+      text-align: center;
+    }
+  }
+  
+  /* ======================================================================
+     5. MAIN CONTENT AREA
+     ====================================================================== */
+  .fishes-content {
+    padding: 100px 20px 40px; /* offset for fixed navbar */
+    flex: 1;
+  }
+  
+  .fishes-content h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* ======================================================================
+     6. DROPDOWN SECTIONS & GROUPING
+     ====================================================================== */
+  .dropdown-section {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown-section:hover {
+    transform: scale(1.01);
+  }
+  
+  .dropdown-header {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 15px 20px;
+    font-size: 1.4em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease, padding 0.3s ease;
+  }
+  
+  .dropdown-header:hover {
+    background-color: #00695c;
+  }
+  
+  .dropdown-icon {
+    font-size: 1.6em;
+  }
+  
+  .dropdown-content {
+    padding: 20px;
+    background-color: #e0f2f1;
+    animation: fadeIn 0.5s;
+  }
+  
+  /* ======================================================================
+     7. TANK SIZE SECTION (GROUPINGS)
+     ====================================================================== */
+  .tank-size-section {
+    border-top: 1px solid #ccc;
+    padding: 15px 0;
+  }
+  
+  .tank-size-header {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #c8e6c9;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+  }
+  
+  .tank-size-header:hover {
+    background: #a5d6a7;
+  }
+  
+  .tank-size-content {
+    padding: 15px 20px;
+    background-color: var(--card-bg);
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+  
+  /* ======================================================================
+     8. FISH LIST GRID LAYOUT
+     ====================================================================== */
+  .fish-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 0;
+  }
+  
+  /* ======================================================================
+     9. FISHCARD COMPONENT STYLING
+     ====================================================================== */
+  .fish-card {
+    background: var(--card-bg);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .fish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .fish-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .fish-image img:hover {
+    transform: scale(1.02);
+  }
+  
+  .fish-details h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    text-transform: capitalize;
+  }
+  
+  .fish-details ul {
+    list-style: none;
+    font-size: 0.9em;
+    color: var(--text-dark);
+    margin-left: 0;
+    padding-left: 0;
+  }
+  
+  .fish-details li {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    position: relative;
+  }
+  
+  .fish-details li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 1.2em;
+    line-height: 1;
+  }
+  
+  .upload-section {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .upload-section label {
+    font-size: 0.9em;
+    margin-right: 5px;
+    color: var(--accent-color);
+  }
+  
+  .upload-section input[type="file"] {
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+  }
+  
+  /* ======================================================================
+     10. FOOTER STYLES
+     ====================================================================== */
+  .footer {
+    background: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 30px;
+    font-size: 0.9em;
+    margin-top: auto;
+  }
+  
+  .footer p {
+    margin-bottom: 10px;
+  }
+  
+  .social-media a {
+    margin: 0 10px;
+    color: #cfd8dc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .social-media a:hover {
+    color: var(--text-light);
+  }
+  
+  /* ======================================================================
+     11. ANIMATIONS & EFFECTS
+     ====================================================================== */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* ======================================================================
+     12. TYPOGRAPHY & ADDITIONAL UTILITIES
+     ====================================================================== */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 15px;
+    color: var(--text-dark);
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* Utility Classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  .uppercase {
+    text-transform: uppercase;
+  }
+  
+  .mt-20 {
+    margin-top: 20px;
+  }
+  
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  
+  /* ======================================================================
+     13. CUSTOM BUTTON STYLES
+     ====================================================================== */
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border-radius: 30px;
+    font-size: 1em;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #00695c;
+    transform: scale(1.02);
+  }
+  
+  /* ======================================================================
+     14. BACKGROUND & DECORATIVE ELEMENTS
+     ====================================================================== */
+  .hero-bg {
+    background: url('https://via.placeholder.com/1600x900?text=Aquarium+Background') center/cover no-repeat;
+    height: 60vh;
+    position: relative;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* ======================================================================
+     15. RESPONSIVE DESIGN - TABLETS & MOBILE
+     ====================================================================== */
+  @media (max-width: 768px) {
+    .fishes-content {
+      padding: 120px 20px 40px;
+    }
+    .dropdown-header {
+      font-size: 1.2em;
+      padding: 12px 15px;
+    }
+    .tank-size-header {
+      font-size: 1em;
+      padding: 8px 15px;
+    }
+    .fish-card {
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .fishes-content {
+      padding: 140px 10px 20px;
+    }
+    .navbar .logo a {
+      font-size: 1.3em;
+    }
+    .nav-links a {
+      font-size: 0.9em;
+    }
+    .dropdown-header {
+      font-size: 1em;
+      padding: 10px 12px;
+    }
+    .tank-size-header {
+      font-size: 0.9em;
+      padding: 6px 10px;
+    }
+    .fish-details h3 {
+      font-size: 1em;
+    }
+    .fish-details ul {
+      font-size: 0.8em;
+    }
+    .upload-section label {
+      font-size: 0.8em;
+    }
+  }
+  
+  /* ======================================================================
+     16. EXTRA STYLING & DECORATIVE DETAILS
+     ====================================================================== */
+  /* Adding subtle gradients to cards */
+  .fish-card {
+    background: linear-gradient(135deg, #ffffff, #f1f8e9);
+  }
+  
+  /* Adding hover effect for links within cards */
+  .fish-details li:hover {
+    color: var(--accent-color);
+  }
+  
+  /* Adding decorative borders to dropdown sections */
+  .dropdown-section {
+    border: 2px solid #c8e6c9;
+  }
+  
+  /* Extra spacing utility */
+  .spacing-50 {
+    margin: 50px 0;
+  }
+  
+  /* ======================================================================
+     17. FOOTER DECOR & FINAL TOUCHES
+     ====================================================================== */
+  .footer {
+    border-top: 2px solid #c8e6c9;
+    padding-top: 20px;
+  }
+  
+  /* ======================================================================
+     18. DEBUG & DEV UTILITIES (COMMENT OUT FOR PROD)
+     ====================================================================== */
+  /* Uncomment below to show grid outlines for debugging */
+  /*
+  .fish-list li {
+    outline: 1px dashed red;
+  }
+  */
+  
+  /* ======================================================================
+     END OF CSS FILE - AQUARIUM HUB - FISHES PAGE
+     ====================================================================== */
+  

@@ -1,0 +1,417 @@
+/* ======================================================================
+   AQUARIUM HUB - DECORS PAGE STYLES
+   ======================================================================
+   This CSS file provides an extensive, beautified styling for the 
+   Aquarium Decors page of AquaHaven. It includes advanced gradients,
+   smooth transitions, custom typography, grid layouts, and responsive
+   design to create an immersive, professional look.
+   ====================================================================== */
+
+/* ----------------------------------------------------------------------
+   1. BASE & RESET
+------------------------------------------------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: #f4f7f6;
+    color: #424242;
+  }
+  
+  /* ----------------------------------------------------------------------
+     2. GLOBAL VARIABLES
+  ------------------------------------------------------------------------ */
+  :root {
+    --primary-color: #004d40;
+    --secondary-color: #00695c;
+    --accent-color: #00796b;
+    --light-bg: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-dark: #424242;
+    --text-light: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ----------------------------------------------------------------------
+     3. CONTAINER & LAYOUT
+  ------------------------------------------------------------------------ */
+  .decors-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--light-bg);
+  }
+  
+  /* ----------------------------------------------------------------------
+     4. NAVIGATION BAR
+  ------------------------------------------------------------------------ */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--shadow-color);
+  }
+  
+  .logo a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--text-light);
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #cfd8dc;
+  }
+  
+  /* Responsive Navigation */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+    .nav-links {
+      flex-direction: column;
+      position: fixed;
+      top: 65px;
+      left: 0;
+      width: 100%;
+      background: var(--primary-color);
+      padding: 20px 0;
+      display: none;
+    }
+    .nav-links.open {
+      display: flex;
+    }
+    .nav-links li {
+      margin: 15px 0;
+      text-align: center;
+    }
+  }
+  
+  /* ----------------------------------------------------------------------
+     5. MAIN CONTENT AREA
+  ------------------------------------------------------------------------ */
+  .decors-content {
+    padding: 100px 20px 40px; /* Offset for fixed navbar */
+    flex: 1;
+    text-align: center;
+  }
+  
+  .decors-content h1 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* ----------------------------------------------------------------------
+     6. DROPDOWN SECTION & GROUPINGS
+  ------------------------------------------------------------------------ */
+  .dropdown-section {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown-section:hover {
+    transform: scale(1.01);
+  }
+  
+  .dropdown-header {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 15px 20px;
+    font-size: 1.4em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+  }
+  
+  .dropdown-header:hover {
+    background-color: #00695c;
+  }
+  
+  .dropdown-icon {
+    font-size: 1.6em;
+  }
+  
+  .dropdown-content {
+    padding: 20px;
+    background-color: #e0f2f1;
+    animation: fadeIn 0.5s;
+  }
+  
+  /* ----------------------------------------------------------------------
+     7. DECOR LIST & GRID LAYOUT
+  ------------------------------------------------------------------------ */
+  .decor-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 0;
+  }
+  
+  /* ----------------------------------------------------------------------
+     8. DECORCARD COMPONENT STYLING
+  ------------------------------------------------------------------------ */
+  .decor-card {
+    background: linear-gradient(135deg, var(--card-bg), #f1f8e9);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .decor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+  
+  .decor-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .decor-image img:hover {
+    transform: scale(1.02);
+  }
+  
+  .decor-details h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    text-transform: capitalize;
+  }
+  
+  .decor-details ul {
+    list-style: none;
+    font-size: 0.9em;
+    color: var(--text-dark);
+    padding-left: 0;
+  }
+  
+  .decor-details li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px;
+  }
+  
+  .decor-details li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 1.2em;
+  }
+  
+  .upload-section {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .upload-section label {
+    font-size: 0.9em;
+    margin-right: 5px;
+    color: var(--accent-color);
+  }
+  
+  .upload-section input[type="file"] {
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+  }
+  
+  /* ----------------------------------------------------------------------
+     9. FOOTER STYLES
+  ------------------------------------------------------------------------ */
+  .footer {
+    background: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 30px;
+    font-size: 0.9em;
+    margin-top: auto;
+    border-top: 2px solid #c8e6c9;
+  }
+  
+  .footer p {
+    margin-bottom: 10px;
+  }
+  
+  .social-media a {
+    margin: 0 10px;
+    color: #cfd8dc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .social-media a:hover {
+    color: var(--text-light);
+  }
+  
+  /* ----------------------------------------------------------------------
+     10. ANIMATIONS
+  ------------------------------------------------------------------------ */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* ----------------------------------------------------------------------
+     11. RESPONSIVE DESIGN
+  ------------------------------------------------------------------------ */
+  @media (max-width: 768px) {
+    .decors-content {
+      padding: 120px 20px 40px;
+    }
+    .dropdown-header {
+      font-size: 1.2em;
+      padding: 12px 15px;
+    }
+    .decor-card {
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .decors-content {
+      padding: 140px 10px 20px;
+    }
+    .navbar .logo a {
+      font-size: 1.3em;
+    }
+    .nav-links a {
+      font-size: 0.9em;
+    }
+    .dropdown-header {
+      font-size: 1em;
+      padding: 10px 12px;
+    }
+    .decor-details h3 {
+      font-size: 1em;
+    }
+    .decor-details ul {
+      font-size: 0.8em;
+    }
+    .upload-section label {
+      font-size: 0.8em;
+    }
+  }
+  
+  /* ----------------------------------------------------------------------
+     12. TYPOGRAPHY & UTILITIES
+  ------------------------------------------------------------------------ */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 15px;
+    color: var(--text-dark);
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* Utility Classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  .uppercase {
+    text-transform: uppercase;
+  }
+  
+  .mt-20 {
+    margin-top: 20px;
+  }
+  
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  
+  /* ----------------------------------------------------------------------
+     13. CUSTOM BUTTON STYLES (if needed)
+  ------------------------------------------------------------------------ */
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border-radius: 30px;
+    font-size: 1em;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #00695c;
+    transform: scale(1.02);
+  }
+  
+  /* ======================================================================
+     END OF DECORS.CSS
+     ====================================================================== */
+  
