@@ -136,9 +136,6 @@ function Woods() {
           <li>
             <Link to="/woods">Woods</Link>
           </li>
-          <li>
-            <Link to="/decors">Artificial Decors</Link>
-          </li>
         </ul>
       </nav>
 
