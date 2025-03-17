@@ -514,6 +514,9 @@
     border-top: 2px solid #c8e6c9;
     padding-top: 20px;
   }
+  .footer>p{
+    color: black;
+  }
   
   /* ======================================================================
      18. DEBUG & DEV UTILITIES (COMMENT OUT FOR PROD)
