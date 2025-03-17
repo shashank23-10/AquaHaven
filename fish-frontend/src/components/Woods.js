@@ -123,7 +123,7 @@ function Woods() {
       {/* Header */}
       <nav className="navbar">
         <div className="logo">
-          <Link to="/">Aquarium Hub</Link>
+          <Link to="/">AquaHaven</Link>
         </div>
         <div className="hamburger">&#9776;</div>
         <ul className="nav-links">
