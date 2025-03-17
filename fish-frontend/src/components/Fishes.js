@@ -23,9 +23,6 @@ import swordtail from '../images/fishes/swordtail.jpg'
 import otocinclus from '../images/fishes/otocinclus.jpg';
 import corydoras from '../images/fishes/corydoras.jpg'
 
-const toggleMenu = () => {
-  setMenuOpen((prevState) => !prevState);
-};
 
 // ----------------- Reusable FishCard Component -----------------
 function FishCard({ fish }) {
@@ -1684,6 +1681,12 @@ const saltwaterFishes = [
 
 // ----------------- Fishes Page Component -----------------
 function Fishes() {
+    const [menuOpen, setMenuOpen] = useState(false);
+  
+    const toggleMenu = () => {
+      setMenuOpen((prevState) => !prevState);
+    };
+
   // Dropdown state for Freshwater and Saltwater
   const [freshwaterOpen, setFreshwaterOpen] = useState(true);
   const [saltwaterOpen, setSaltwaterOpen] = useState(true);

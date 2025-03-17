@@ -10,10 +10,6 @@ import redmangrove from '../images/woods/redmangrove.jpg'
 import rosewood from '../images/woods/rosewood.jpeg'
 import teakwood from '../images/woods/teakwood.jpg'
 
-const toggleMenu = () => {
-  setMenuOpen((prevState) => !prevState);
-};
-
 // ----------------- Reusable WoodCard Component -----------------
 function WoodCard({ wood }) {
   const [imagePreview, setImagePreview] = useState(
@@ -119,6 +115,12 @@ const woodsData = [
 
 // ----------------- Woods Page Component -----------------
 function Woods() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen((prevState) => !prevState);
+  };
+
   // Dropdown state for the woods list
   const [woodsOpen, setWoodsOpen] = useState(true);
 

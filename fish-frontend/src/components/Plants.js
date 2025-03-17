@@ -22,9 +22,6 @@ import vallisneria from "../images/plants/vallisneria.jpg"
 import visteria from "../images/plants/visteria.jpg"
 import wendtii from "../images/plants/wendtii.webp"
 
-const toggleMenu = () => {
-  setMenuOpen((prevState) => !prevState);
-};
 
 // Reusable PlantCard Component
 function PlantCard({ plant }) {
@@ -563,6 +560,12 @@ const saltwaterPlants = [
 function Plants() {
   const [freshwaterOpen, setFreshwaterOpen] = useState(false);
   const [saltwaterOpen, setSaltwaterOpen] = useState(false);
+
+    const [menuOpen, setMenuOpen] = useState(false);
+  
+    const toggleMenu = () => {
+      setMenuOpen((prevState) => !prevState);
+    };
 
   return (
     <div className="plants-page">
