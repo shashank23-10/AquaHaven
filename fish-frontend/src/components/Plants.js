@@ -22,6 +22,10 @@ import vallisneria from "../images/plants/vallisneria.jpg"
 import visteria from "../images/plants/visteria.jpg"
 import wendtii from "../images/plants/wendtii.webp"
 
+const toggleMenu = () => {
+  setMenuOpen((prevState) => !prevState);
+};
+
 // Reusable PlantCard Component
 function PlantCard({ plant }) {
   const [imagePreview, setImagePreview] = useState(

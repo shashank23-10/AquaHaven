@@ -23,6 +23,10 @@ import swordtail from '../images/fishes/swordtail.jpg'
 import otocinclus from '../images/fishes/otocinclus.jpg';
 import corydoras from '../images/fishes/corydoras.jpg'
 
+const toggleMenu = () => {
+  setMenuOpen((prevState) => !prevState);
+};
+
 // ----------------- Reusable FishCard Component -----------------
 function FishCard({ fish }) {
   const [imagePreview, setImagePreview] = useState(

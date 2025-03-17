@@ -10,6 +10,10 @@ import redmangrove from '../images/woods/redmangrove.jpg'
 import rosewood from '../images/woods/rosewood.jpeg'
 import teakwood from '../images/woods/teakwood.jpg'
 
+const toggleMenu = () => {
+  setMenuOpen((prevState) => !prevState);
+};
+
 // ----------------- Reusable WoodCard Component -----------------
 function WoodCard({ wood }) {
   const [imagePreview, setImagePreview] = useState(
