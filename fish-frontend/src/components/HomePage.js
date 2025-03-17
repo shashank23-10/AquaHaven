@@ -35,11 +35,6 @@ function HomePage() {
               Woods
             </Link>
           </li>
-          <li>
-            <Link to="/decors" onClick={() => setMenuOpen(false)}>
-              Artificial Decors
-            </Link>
-          </li>
         </ul>
       </nav>
 
@@ -86,26 +81,6 @@ function HomePage() {
             them in aquascaping.
           </p>
           <Link className="learn-more" to="/woods">
-            Learn More
-          </Link>
-        </div>
-        <div className="description-card">
-          <h2>Artificial Decors</h2>
-          <p>
-            Browse our curated collection of artificial decors to enhance your
-            aquarium’s visual appeal.
-          </p>
-          <Link className="learn-more" to="/decors">
-            Learn More
-          </Link>
-        </div>
-        <div className="description-card">
-          <h2>DIYs</h2>
-          <p>
-            Get creative with our DIY guides for building custom aquarium setups
-            and accessories.
-          </p>
-          <Link className="learn-more" to="/diy">
             Learn More
           </Link>
         </div>
