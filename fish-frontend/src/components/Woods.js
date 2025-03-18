@@ -19,9 +19,6 @@ function WoodCard({ wood }) {
 
   return (
     <div className="wood-card">
-      <div className="wood-image">
-        <img src={imagePreview} alt={wood.name} />
-      </div>
       <div className="wood-details">
         <h3>{wood.name}</h3>
         <ul>
@@ -129,7 +126,7 @@ function Woods() {
       {/* Header */}
       <nav className="navbar">
         <div className="logo">
-          <Link to="/">AquaHaven</Link>
+          <Link to="/">HydroSanctuary</Link>
         </div>
         <div className="hamburger" onClick={toggleMenu}>&#9776;</div>
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
@@ -172,7 +169,7 @@ function Woods() {
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2025 Aquarium Hub. All rights reserved.</p>
+        <p>&copy; 2025 HydroSanctuary. All rights reserved.</p>
       </footer>
     </div>
   );

@@ -32,9 +32,6 @@ function PlantCard({ plant }) {
 
   return (
     <div className="plant-card">
-      <div className="plant-image">
-        <img src={imagePreview} alt={plant.name} />
-      </div>
       <div className="plant-details">
         <h3>{plant.name}</h3>
         <ul>
@@ -572,7 +569,7 @@ function Plants() {
       {/* Header */}
       <nav className="navbar">
         <div className="logo">
-          <Link to="/">AquaHaven</Link>
+          <Link to="/">HydroSanctuary</Link>
         </div>
         <div className="hamburger" onClick={toggleMenu}>&#9776;</div>
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
@@ -643,7 +640,7 @@ function Plants() {
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2025 Aquarium Hub. All rights reserved.</p>
+        <p>&copy; 2025 HydroSanctuary. All rights reserved.</p>
       </footer>
     </div>
   );

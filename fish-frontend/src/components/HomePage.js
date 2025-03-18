@@ -14,7 +14,7 @@ function HomePage() {
       {/* Navigation Bar */}
       <nav className="navbar">
         <div className="logo">
-          <Link to="/">AquaHaven</Link>
+          <Link to="/">HydroSanctuary</Link>
         </div>
         <div className="hamburger" onClick={toggleMenu}>
           &#9776;
@@ -41,7 +41,7 @@ function HomePage() {
       {/* Hero Section */}
       <header className="hero-section">
         <div className="hero-overlay">
-          <h1>Welcome to AquaHaven</h1>
+          <h1>Welcome to HydroSanctuary</h1>
           <p>
             Your ultimate one-stop resource for aquarium care, creative ideas,
             and expert guidance.
@@ -88,7 +88,7 @@ function HomePage() {
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2025 Aquarium Hub. All rights reserved.</p>
+        <p>&copy; 2025 HydroSanctuary. All rights reserved.</p>
       </footer>
     </div>
   );

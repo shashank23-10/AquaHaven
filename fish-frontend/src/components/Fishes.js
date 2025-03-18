@@ -43,9 +43,6 @@ function FishCard({ fish }) {
 
   return (
     <div className="fish-card">
-      <div className="fish-image">
-        <img src={imagePreview} alt={fish.name} />
-      </div>
       <div className="fish-details">
         <h3>{fish.name}</h3>
         <ul>
@@ -1735,7 +1732,7 @@ function Fishes() {
       {/* Header */}
       <nav className="navbar">
         <div className="logo">
-          <Link to="/">AquaHaven</Link>
+          <Link to="/">HydroSanctuary</Link>
         </div>
         <div className="hamburger" onClick={toggleMenu}>&#9776;</div>
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
@@ -1834,7 +1831,7 @@ function Fishes() {
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2025 Aquarium Hub. All rights reserved.</p>
+        <p>&copy; 2025 HydroSanctuary. All rights reserved.</p>
       </footer>
     </div>
   );
